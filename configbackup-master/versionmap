@@ -1,0 +1,13 @@
+dpdk1{
+global:
+adam;
+};
+dpdk2{
+global:
+bynes;
+}dpdk1;
+dpdk3{
+global:
+bynes;
+}dpdk2;
+

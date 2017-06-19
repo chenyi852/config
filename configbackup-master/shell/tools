@@ -1,0 +1,89 @@
+#!/bin/bash
+case $1 in
+    mp)
+	mpstat -P ALL -u
+        ;;
+    www)
+	sudo echo test
+	pkill -9 polipo
+	pkill -9 sslocal
+#sslocal -c /etc/shadowsocks/config.json
+	export https_proxy="http://127.0.0.1:8123"
+	export http_proxy="http://127.0.0.1:8123"
+	sudo polipo socksParentProxy=localhost:1080 &
+	cd ~/web;w3m https://www.bing.com
+#sslocal -c /etc/shadowsocks/config.json
+        ;;
+    mpi)
+	mpstat -P $2 1 
+        ;;
+    lines)
+	find -iname "*$2*" | xargs cat | wc -l 
+#find . -type f -exec wc -l {} \; | awk '{ SUM += $0} END { print SUM }'
+        ;;
+    psr)
+	ps -mo pid,tid,%cpu,psr -p `pidof $2`
+        ;;
+    pss)
+	ps -Lo ppid,sid,pgid,pid,tid,%cpu,psr,command -p `pgrep $2`
+        ;;
+    pssp)
+	ps -Lo ppid,sid,pgid,pid,tid,%cpu,psr,command -p $2
+        ;;
+    make_app)
+        echo "build the dpdk app in the current folder";
+	export RTE_SDK=${src_code};
+        make
+        ;;
+    init)
+        #sudo modprobe uio_pci_generic;
+        #sudo modprobe vfio-pci;
+	sudo modprobe uio
+	sudo insmod ./x86_64-native-linuxapp-gcc/kmod/igb_uio.ko
+        ;;
+    bind)
+        /home/adambynes/repo/dpdk/tools/dpdk_nic_bind.py --status
+        ;;
+    bind1)
+        sudo /home/adambynes/repo/dpdk/tools/dpdk_nic_bind.py -b igb_uio 0000:82:00.0 0000:82:00.1 0000:82:00.2 0000:82:00.3
+        ;;
+    unbind1)
+       sudo  /home/adambynes/repo/dpdk/tools/dpdk_nic_bind.py -u  82:00.0 82:00.1 82:00.2 82:00.3
+        ;;
+    bind0)
+       sudo  /home/adambynes/repo/dpdk/tools/dpdk_nic_bind.py -b igb_uio 0000:06:00.0 0000:06:00.1 
+        ;;
+    ubind0)
+        sudo /home/adambynes/repo/dpdk/tools/dpdk_nic_bind.py -u  0000:06:00.0 0000:06:00.1 
+        ;;
+    testpmd1)
+	 #sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 --log-level 4  -- -i
+	 #sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 -- -i
+	 sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c ff00000 -n 4 -- -i --numa  --rxd 1024 --txd 1024
+	 #sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c ff00000 -n 4 -- -i --numa  
+	;;
+    testpmd0)
+	 #sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 --log-level 4  -- -i
+	 #sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 -- -i
+	 sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c f0 -n 4 -- -i --numa  --rxd 1024 --txd 1024
+	# sudo ./x86_64-native-linuxapp-gcc/app/testpmd -c ff00000 -n 4 -- -i --numa  
+	;;
+    testpmd0_gdb)
+	 sudo gdb --args ./x86_64-native-linuxapp-gcc/app/testpmd -c f0 -n 4 -- -i --numa  --rxd 1024 --txd 1024
+	 #sudo gdb --args ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 --log-level 4  -- -i
+	;;
+    testpmd1_gdb)
+	 sudo gdb --args ./x86_64-native-linuxapp-gcc/app/testpmd -c ff00000 -n 4 -- -i --numa  --rxd 1024 --txd 1024
+	 #sudo gdb --args ./x86_64-native-linuxapp-gcc/app/testpmd -c f -n 4 --log-level 4  -- -i
+	;;
+
+ 
+    *)
+        echo please see the help;
+        echo dpdk_make make the dpdk for the default target
+        echo dpdk_make_gcc make the dpdk for the specific target in the specific folder
+        echo dpdk_init insert the necessary mode
+        echo dpdk_bind bind and unbind the device driver
+        ;;
+esac
+#sudo perf stat -e r00c0 -e cycles ./a.out
