@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -115,5 +115,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-PATH=~/shell:$PATH
-export EDITOR=/usr/bin/vim
+
+### set PS1
+IP=`/sbin/ifconfig eno1 | grep -w inet | awk  '{print $2}'|awk  -F ':' '{print $2}'`
+PS1='\[\e[35;1m\]\u@$IP:\w $?>\[\e[0m\]'
+
+###fast model license
+export ARMLMD_LICENSE_FILE=8224@192.168.2.50
+. ~/ARM/FastModelsTools_10.2/source_all.sh
+
+

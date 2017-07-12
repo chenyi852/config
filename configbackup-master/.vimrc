@@ -1,3 +1,10 @@
+"author adma
+"modified by chenyi
+
+if has("autocmd") 
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") 
+ 	\| exe "normal g'\"" | endif 
+endif
 set path=./**,**,
 "set colorcolumn=80
 nmap csm :set colorcolumn=75<CR> 
@@ -36,14 +43,24 @@ nmap csb :Gblame<CR>o<C-W>j:q<CR><C-W>kcsi
 " split horizontally, with search result displayed in
 " the new window.
 
-nmap <C-s>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-s>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-s>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-s>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-s>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-s>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-s>i :scs find i <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-s>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-/>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-/>i :scs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-/>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+nmap scs :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap scg :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap scc :scs find c <C-R>=expand("<cword>")<CR><CR> 
+nmap sct :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap sce :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap scf :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap sci :scs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap scd :scs find d <C-R>=expand("<cword>")<CR><CR>
+
 
 highlight MyGroup ctermbg=gray guibg=gray
 
@@ -64,11 +81,11 @@ nmap <C-k> 10k
 "if &diff
 "    colors peaksea
 "endif
-colors peaksea
+"colors peaksea
 set mouse=a
 nmap <C-e> $
 nmap <C-a> ^
-nmap <C-u> [[o#if 0<Esc>][O#endif<Esc> 
+"nmap <C-u> [[o#if 0<Esc>][O#endif<Esc> 
 nmap <C-u><C-m> [[jdd<Esc>][kdd<Esc> 
 nmap <C-u>m  <Esc>:r !date<CR>i/*Adam Tao@cisco edited at <Esc>$a*/<Esc> 
 "nmap <Tab> i<Space><Space><Space><Space><Esc>

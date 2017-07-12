@@ -1,6 +1,7 @@
 #!/bin/bash
 exename=$(basename $0)
-backup=~/configbackup
+prj_dir=~/workspace/selfsrc/config
+backup=$prj_dir/configbackup-master
 echo $exename
 case $1 in
     copy)
@@ -17,7 +18,7 @@ cp -r ~/.w3m $backup/
 cp -r ~/.bashrc $backup/
         ;;
     clone)
-	git clone https://github.com/chenyi852/config.git
+	git clone https://github.com/chenyi/config.git
         ;;
     add)
 	cd $backup; 
