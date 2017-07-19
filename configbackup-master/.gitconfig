@@ -1,0 +1,17 @@
+[color]
+	ui=true
+[alias]
+	lg=log
+	st=status
+	ci=commit
+	co=checkout
+	br=branch
+[github]
+	user=chenyi852
+[user]
+	email = chenyi852@gmail.com
+	name = chenyi
+[push]
+	default = matching
+[core]
+	fileMode = false
