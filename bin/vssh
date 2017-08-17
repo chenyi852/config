@@ -1,0 +1,46 @@
+#!/bin/bash
+
+MACHINE="white-cat chenyi 192.168.2.53"
+declare -a HOST
+declare -a USER
+declare -a IPADR
+NUM=1
+set -- $MACHINE
+
+while [ $# -ne 0 ] ;do
+	HOST[$NUM]=$1
+	shift
+	USER[$NUM]=$1
+	shift
+	IPADR[$NUM]=$1
+	shift
+	NUM=$((NUM+1))
+done
+finded=1
+crual1=
+crual2=
+crual3=
+location=1
+
+PS3="host to connect >> "
+
+select i in ${HOST[@]}
+do
+set -- ${HOST[@]}
+while [ $finded -ne 0 ] && [ $# -ne 0 ] ;do
+	crual1=${HOST[$location]}
+	crual2=${USER[$location]}
+	crual3=${IPADR[$location]}
+
+	if [ $1 = $i ];then
+	finded=0
+	fi
+	shift
+	location=$((location+1))
+done
+
+echo ssh $crual2@$crual3
+	ssh $crual2@$crual3
+	break;
+done
+
