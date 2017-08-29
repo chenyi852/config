@@ -121,7 +121,7 @@ IP=`/sbin/ifconfig eno1 | grep -w inet | awk  '{print $2}'|awk  -F ':' '{print $
 PS1='\[\e[35;1m\]\u@$IP:\w $?>\[\e[0m\]'
 
 ###fast model license
-export ARMLMD_LICENSE_FILE=8224@192.168.2.50
-. ~/ARM/FastModelsTools_10.2/source_all.sh
+#export ARMLMD_LICENSE_FILE=8224@192.168.2.50
+#. ~/ARM/FastModelsTools_10.2/source_all.sh
 
 

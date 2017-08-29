@@ -9,6 +9,7 @@ cp -r ~/shell/ $backup
 cp -r ~/.vim $backup
 cp ~/.vimrc $backup
 cp ~/.tmux.conf $backup
+cp ~/.gitconfig $backup
 cp -r ~/.muttrc $backup/mail
 cp -r ~/.esmtprc $backup/mail
 cp -r ~/.procmailrc $backup/mail
@@ -17,7 +18,6 @@ cp -r ~/.mailcap $backup/mail
 cp -r ~/.w3m $backup/
 cp -r ~/.bashrc $backup/
 cp -r ~/.bash_aliases $backup/
-cp ~/.gitconfig $backup/
         ;;
     clone)
 	git clone https://github.com/chenyi/config.git

@@ -12,6 +12,7 @@ set hls
 set tabstop=8
 highlight OverLength ctermbg=yellow ctermfg=black guibg=#592929
 match OverLength /\%81v.\+/
+set cindent
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-,f-,g-
 nmap wm :WMToggle<cr>
@@ -150,7 +151,7 @@ hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=whi
 "hi CursorIM cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 hi Cursor ctermbg=15 ctermfg=8
 cnoremap <c-a> <C-B>
-"nmap qq :q<CR>
+nmap qq :q<CR>
 "nmap du <C-w>k
 "nmap dd <C-w>u
 set ww=b,s,h,l
