@@ -10,6 +10,7 @@ cp -r ~/.vim $backup
 cp ~/.vimrc $backup
 cp ~/.tmux.conf $backup
 cp ~/.gitconfig $backup
+cp ~/.gdbinit $backup
 cp -r ~/.muttrc $backup/mail
 cp -r ~/.esmtprc $backup/mail
 cp -r ~/.procmailrc $backup/mail

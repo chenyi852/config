@@ -18,7 +18,7 @@ alias sp='cd $self_dir'
 alias a64='cd $work_dir/arm64'
 alias rl='cd ~/workspace/testspace/rtos_benchmark/rtos_benchmark_src/testcase/bin/lmbench3'
 alias winp='cd $win_dir'
-
+alias perfp='cd $work_dir/ubuntu/linux-4.4.0/tools/perf'
 ### environment setting
 alias env_arm64='source ~/bin/setenv.sh arm64'
 alias env_linaro='source ~/bin/setenv.sh linaro'

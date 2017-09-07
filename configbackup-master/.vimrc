@@ -143,8 +143,8 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=256
 "set cursorline
-nmap <C-c> :set cursorline<CR>:set cursorcolumn<CR>
-nmap <C-n><C-c> :set nocursorline<CR>:set nocursorcolumn<CR>
+"nmap <C-c> :set cursorline<CR>:set cursorcolumn<CR>
+"nmap <C-n><C-c> :set nocursorline<CR>:set nocursorcolumn<CR>
 hi CursorLine   cterm=NONE ctermbg=yellow ctermfg=black guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 "hi Cursor cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
