@@ -1,0 +1,1 @@
+tagbar.vmb: call delete('/home/chenyi/.vim/LICENSE')|call delete('/home/chenyi/.vim/README.md')|call delete('/home/chenyi/.vim/autoload/tagbar.vim')|call delete('/home/chenyi/.vim/doc/tagbar.txt')|call delete('/home/chenyi/.vim/plugin/tagbar.vim')|call delete('/home/chenyi/.vim/syntax/tagbar.vim')
