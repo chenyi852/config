@@ -7,9 +7,10 @@ if has("autocmd")
 endif
 set path=./**,**,
 "set colorcolumn=80
-nmap csm :set colorcolumn=75<CR> 
+nmap csm :set colorcolumn=80<CR> 
 set hls
-set tabstop=8
+set tabstop=4
+set shiftwidth=4
 highlight OverLength ctermbg=yellow ctermfg=black guibg=#592929
 match OverLength /\%81v.\+/
 set cindent
@@ -62,6 +63,14 @@ nmap scf :scs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap sci :scs find i <C-R>=expand("<cfile>")<CR><CR>
 nmap scd :scs find d <C-R>=expand("<cword>")<CR><CR>
 
+nmap vcs :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap vcg :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap vcc :vert scs find c <C-R>=expand("<cword>")<CR><CR> 
+nmap vct :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap vce :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap vcf :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap vci :vert scs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap vcd :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 highlight MyGroup ctermbg=gray guibg=gray
 
@@ -76,13 +85,13 @@ nmap <C-h> 10h
 nmap <C-j> 10j
 nmap <C-k> 10k
 
-"if ! has("gui_running")
-"  set t_Co=256
-"endif
-"if &diff
-"    colors peaksea
-"endif
-"colors peaksea
+if ! has("gui_running")
+  set t_Co=256
+endif
+if &diff
+    colors peaksea
+endif
+colors peaksea
 set mouse=a
 nmap <C-e> $
 nmap <C-a> ^
@@ -128,7 +137,7 @@ nmap pc :cd <C-R>=expand("%:h")<CR><CR>
 :let g:NERDTreeDirArrows=0
 :let g:LookupFile_TagExpr='"./filenametags"'
 :let g:LookupFile_ignorecase=1
-set ignorecase
+"set ignorecase
 nmap gn :set ignorecase 
 nmap zgn :set noignorecase 
 nmap vs :vs<CR>:Explore<CR> 
@@ -151,12 +160,26 @@ hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=whi
 "hi CursorIM cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 hi Cursor ctermbg=15 ctermfg=8
 cnoremap <c-a> <C-B>
+:nnoremap <silent> <F6> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 nmap qq :q<CR>
 "nmap du <C-w>k
 "nmap dd <C-w>u
 set ww=b,s,h,l
 "set expandtab
 set nu
+"按F9即可打开tagbar interface
+nmap <silent> <F9> :TagbarToggle<CR>
+"tagbar以来ctags插件
+let g:tagbar_ctags_bin = 'ctags'                       
+"让tagbar在页面左侧显示，默认右边
+let g:tagbar_left = 1
+"设置tagbar的宽度为30列，默认40
+let g:tagbar_width = 30
+"这是tagbar一打开，光标即在tagbar页面内，默认在vim打开的文件内
+let g:tagbar_autofocus = 1 
+"设置标签不排序，默认排序
+let g:tagbar_sort = 0 
+
 
 " abbreviates 
 abbreviate ACKme Acked-by: Zhe Tao <zhe.tao@intel.com>

@@ -9,9 +9,28 @@
 [github]
 	user=chenyi852
 [user]
-	email = chenyi852@gmail.com
-	name = chenyi
+	email = johnny.chenyi@huawei.com
+	name = chenyi 00200500
+[sendemail]
+#smtpencryption=tls
+	smtpserver=smtp.huawei.com
+	from=johnny.chenyi@huawei.com
+	smtpuser=c00200500
+	smptpass=-iloveu3
+	suppresscc=all
+	confirm=always	
 [push]
 	default = matching
 [core]
 	fileMode = false
+[http]
+	proxy = http://c00200500:-iloveu3@proxyde.huawei.com:8080
+	sslVerify = false
+	postBuffer = 1048576000
+[http "http://rnd-gitlab-eu.huawei.com"]
+   proxy=
+[credenotial]
+	helper = /usr/local/bin/git-credential-gnome-keyring
+[commit]
+	template = /home/chenyi/.gitmsg.txt
+#	gpgsign = true

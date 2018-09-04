@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/chenyi/workspace/arm64/boot-wrapper-aarch64/arch'
-let g:netrw_dirhist_2='/home/chenyi/workspace/arm64/coloris/module/arm64'
-let g:netrw_dirhist_3='/usr/include/X11/bitmaps'
-let g:netrw_dirhist_4='/home/chenyi/win/configbackup-master/shell'
-let g:netrw_dirhist_5='/home/chenyi/win/configbackup-master/shell/awk'
-let g:netrw_dirhist_6='/home/chenyi/win/configbackup-master/shell'
-let g:netrw_dirhist_7='/home/chenyi/workspace/selfsrc/cache_lock/kernel_module'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/chenyi/workspace/selfsrc/config'
+let g:netrw_dirhist_2='/home/chenyi/workspace/selfsrc/config/alias'
