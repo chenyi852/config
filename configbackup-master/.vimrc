@@ -172,7 +172,7 @@ nmap <silent> <F9> :TagbarToggle<CR>
 "tagbar以来ctags插件
 let g:tagbar_ctags_bin = 'ctags'                       
 "让tagbar在页面左侧显示，默认右边
-let g:tagbar_left = 1
+let g:tagbar_left = 0
 "设置tagbar的宽度为30列，默认40
 let g:tagbar_width = 30
 "这是tagbar一打开，光标即在tagbar页面内，默认在vim打开的文件内
