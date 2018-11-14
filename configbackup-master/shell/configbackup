@@ -22,8 +22,8 @@ cp -r ~/.bash_aliases $backup/
 	cp ~/.gitmsg.txt $backup/
         ;;
     set)
-	cp -rf $backup/shell/ ~/shell
-	cp -rf $backup/.vim ~/.vim
+	cp -rf $backup/shell/ ~/
+	cp -rf $backup/.vim ~/
         cp -f $backup/.tmux.conf ~/.tmux.conf
 	cp -f $backup/.gitconfig ~/.gitconfig
 	cp -f $backup/.gdbinit ~/.gdbinit
