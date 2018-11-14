@@ -9,8 +9,10 @@ set path=./**,**,
 "set colorcolumn=80
 nmap csm :set colorcolumn=80<CR> 
 set hls
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+set ts=8
 highlight OverLength ctermbg=yellow ctermfg=black guibg=#592929
 match OverLength /\%81v.\+/
 set cindent
@@ -21,14 +23,15 @@ map  wmb :BottomExplorerWindow<cr>
 map wmt  :FirstExplorerWindow<cr>
 set nocst
 set noswapfile
+" execute without open a new slice window
 nmap css :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap csg :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap csc :cs find c <C-R>=expand("<cword>")<CR><CR>
 nmap cst :cs find t <C-R>=expand("<cword>")<CR><CR>
 nmap cse :cs find e <C-R>=expand("<cword>")<CR><CR>
-"nmap csf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"nmap csi :cs find i <C-R>=expand("<cfile>")<CR><CR>
-"nmap csd :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap csf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap csi :cs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap csd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 nmap csv :cs find g 
 nmap csq :q<CR> 
@@ -38,9 +41,9 @@ nmap wwl 30<C-W>>
 nmap wws 30<C-W>< 
 nmap csh :sp<CR> 
 nmap csu :vs<CR> 
-nmap csi :exe Adammax()<CR> 
-nmap csf :exe Adammaxh()<CR> 
-nmap csb :Gblame<CR>o<C-W>j:q<CR><C-W>kcsi 
+"nmap csi :exe Adammax()<CR> 
+"nmap csf :exe Adammaxh()<CR> 
+"nmap csb :Gblame<CR>o<C-W>j:q<CR><C-W>kcsi 
 " Using 'CTRL-spacebar' then a search type makes the vim window
 " split horizontally, with search result displayed in
 " the new window.
@@ -180,6 +183,26 @@ let g:tagbar_autofocus = 1
 "设置标签不排序，默认排序
 let g:tagbar_sort = 0 
 
+"ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"When invoked, unless a starting directory is specified, CtrlP will set its 
+"local working directory according to this variable
+let g:ctrlp_working_path_mode = 'ra'
+"Exclude files or directories using Vim's
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+"And/Or CtrlP's own g:ctrlp_custom_ignore
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
+"Specify an external tool to use for listing files instead of using Vim's 
+"globpath(). Use %s in place of the target directory
+let g:ctrlp_user_command = 'find %s -type f' 
 
 " abbreviates 
 abbreviate ACKme Acked-by: Zhe Tao <zhe.tao@intel.com>

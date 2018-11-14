@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/chenyi/workspace/selfsrc/config'
 let g:netrw_dirhist_2='/home/chenyi/workspace/selfsrc/config/alias'
+let g:netrw_dirhist_3='/home/chenyi/workspace/hm-mdc/arch/aarch64/elfloader'
+let g:netrw_dirhist_4='/home/chenyi/workspace/opensrc/uefi_fvp/fvp-ack-busybox-uboot'

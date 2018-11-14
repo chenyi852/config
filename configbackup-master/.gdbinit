@@ -5,6 +5,7 @@ add-auto-load-safe-path /home/chenyi/workspace/selfsrc/dev-hm-mdc/.gdbinit
 add-auto-load-safe-path /home/chenyi/workspace/qemu-hm-mdc/.gdbinit
 add-auto-load-safe-path /home/chenyi/win/hm-hypervisor/.gdbinit
 add-auto-load-safe-path /home/chenyi/workspace/hm-mdc/.gdbinit
+add-auto-load-safe-path /home/chenyi/workspace/hm-hypervisor/.gdbinit
 
 # 保存历史命令
 set history filename ~/.gdb_history

@@ -21,6 +21,8 @@ alias rl='cd ~/workspace/testspace/rtos_benchmark/rtos_benchmark_src/testcase/bi
 alias winp='cd $win_dir'
 alias perfp='cd $work_dir/ubuntu/linux-4.4/tools/perf'
 alias ci='cd $win_dir/ci'
+alias pp='cd $work_dir/selfsrc/python_studiy'
+
 ### environment setting
 alias env_arm64='source ~/bin/setenv.sh arm64'
 alias env_linaro='source ~/bin/setenv.sh linaro'

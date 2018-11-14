@@ -1,5 +1,6 @@
 [color]
 	ui=true
+	diff = auto
 [alias]
 	lg=log
 	st=status
@@ -10,7 +11,7 @@
 	user=chenyi852
 [user]
 	email = johnny.chenyi@huawei.com
-	name = chenyi 00200500
+	name = Chen Yi 
 [sendemail]
 #smtpencryption=tls
 	smtpserver=smtp.huawei.com
