@@ -100,7 +100,7 @@ nmap <C-e> $
 nmap <C-a> ^
 "nmap <C-u> [[o#if 0<Esc>][O#endif<Esc> 
 nmap <C-u><C-m> [[jdd<Esc>][kdd<Esc> 
-nmap <C-u>m  <Esc>:r !date<CR>i/*Adam Tao@cisco edited at <Esc>$a*/<Esc> 
+nmap <C-u>m  <Esc>:r !date<CR>i/* Chen Yi@gmail.com edited at <Esc>$a*/<Esc> 
 "nmap <Tab> i<Space><Space><Space><Space><Esc>
 nnoremap <silent>  tlt :TlistToggle<CR>
 nnoremap <silent>  tlu :TlistUpdate<CR>
@@ -132,8 +132,8 @@ nmap ccw :!pandoc <C-R>=expand("%")<CR>\|w3m<CR>
 nmap hex  :%!xxd<CR>
 nmap hexr :%!xxd -r<CR>
 nmap pl :Explore<CR>
- nmap ww :w<CR>
- nmap wwq :wq<CR>
+nmap ww :w<CR>
+nmap wwq :wq<CR>
 "NERD tree related
 nmap pn :NERDTreeToggle <C-R>=expand("%:h")<CR><CR>
 nmap pc :cd <C-R>=expand("%:h")<CR><CR>
@@ -147,8 +147,6 @@ nmap vs :vs<CR>:Explore<CR>
 let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'unicode'
 "let g:Powerline_colorscheme = 'solarized'
-"let g:Powerline_theme = 'solarized16'
-"let g:Powerline_theme = 'default'
 "let g:Powerline_colorscheme = 'skwp'
 set nocompatible
 set laststatus=2
@@ -206,8 +204,8 @@ let g:ctrlp_user_command = 'find %s -type f'
 
 " abbreviates 
 abbreviate ACKme Acked-by: Zhe Tao <zhe.tao@intel.com>
-abbreviate JING jingjing.wu@intel.com 
-abbreviate HELIN helin.zhang@intel.com 
+abbreviate Signme Signed-off-by: Chen Yi <chenyi852@gmail.com>
+abbreviate CHENYI chenyi852@gmail.com 
 abbreviate __S <tab>--yliu
 abbreviate dpdkorg dev@dpdk.org 
 "abbreviate DPDK 'NPG-PRC-SW DPDK <npg-prc-sw.dpdk@intel.com>'
