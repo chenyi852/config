@@ -118,7 +118,7 @@ fi
 
 ### set PS1
 IP=`/sbin/ifconfig eno1 | grep -w inet | awk  '{print $2}'`
-PS1='\[\e[35;1m\]\u@$IP:\w $?>\[\e[0m\]'
+PS1='\[\e[35;1m\]\u@$IP:\w $?\n>\[\e[0m\]'
 
 ###fast model license
 #export ARMLMD_LICENSE_FILE=8224@192.168.2.50
@@ -135,3 +135,5 @@ export no_proxy="localhost,127.0.0.1,.some.domain,127.0.0.0/8,10.0.0.0/8,10.*,*.
 export JAVA_HOME=/home/chenyi/win/jdk1.8.0_171
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
