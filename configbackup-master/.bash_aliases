@@ -3,6 +3,8 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias du1='du --max-depth=1 -h'
+alias reload='source ~/.bashrc'
+alias home="cd $HOME"
 
 work_dir=~/workspace
 win_dir=~/win
@@ -19,6 +21,8 @@ alias sp='cd $self_dir'
 alias a64='cd $work_dir/arm64'
 alias rl='cd ~/workspace/testspace/rtos_benchmark/rtos_benchmark_src/testcase/bin/lmbench3'
 alias winp='cd $win_dir'
+## mdc project in win dir
+alias mdcp='cd $win_dir/mdc_prj'
 alias perfp='cd $work_dir/ubuntu/linux-4.4/tools/perf'
 alias ci='cd $win_dir/ci'
 alias pp='cd $work_dir/selfsrc/python_studiy'
