@@ -1,6 +1,5 @@
 [color]
 	ui=true
-	diff = auto
 [alias]
 	lg=log
 	st=status
@@ -10,13 +9,12 @@
 [github]
 	user=chenyi852
 [user]
-	email = johnny.chenyi@huawei.com
-	name = Chen Yi 
+	email = Chenyi852@gmail.com
+	name = Chen Yi
 [sendemail]
 #smtpencryption=tls
-	smtpserver=smtp.huawei.com
-	from=johnny.chenyi@huawei.com
-	smtpuser=c00200500
+	from=chenyi852@gmail.com
+	smtpuser=Chen Yi
 	smptpass=-iloveu3
 	suppresscc=all
 	confirm=always	
@@ -25,7 +23,6 @@
 [core]
 	fileMode = false
 [http]
-	proxy = http://c00200500:-iloveu3@proxyde.huawei.com:8080
 	sslVerify = false
 	postBuffer = 1048576000
 [http "http://rnd-gitlab-eu.huawei.com"]
@@ -33,5 +30,5 @@
 [credenotial]
 	helper = /usr/local/bin/git-credential-gnome-keyring
 [commit]
-	template = /home/chenyi/.gitmsg.txt
+	template = ~/.gitmsg.txt
 #	gpgsign = true
