@@ -2,5 +2,5 @@ ubject line
 
 what happened
 
-Signed-off-by: Chen Yi <johnny.chenyi@huawei.com>
+Signed-off-by: Chen Yi <chenyi852@gmail.com>
 #[ticket: X]
