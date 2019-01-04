@@ -15,7 +15,6 @@
 #smtpencryption=tls
 	from=chenyi852@gmail.com
 	smtpuser=Chen Yi
-	smptpass=-iloveu3
 	suppresscc=all
 	confirm=always	
 [push]
@@ -25,7 +24,7 @@
 [http]
 	sslVerify = false
 	postBuffer = 1048576000
-[http "http://rnd-gitlab-eu.huawei.com"]
+[http "http://gitlab.com"]
    proxy=
 [credenotial]
 	helper = /usr/local/bin/git-credential-gnome-keyring
