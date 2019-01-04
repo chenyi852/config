@@ -21,6 +21,7 @@
 	default = matching
 [core]
 	fileMode = false
+	editor = vim
 [http]
 	sslVerify = false
 	postBuffer = 1048576000

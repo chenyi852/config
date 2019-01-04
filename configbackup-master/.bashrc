@@ -115,25 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-### set PS1
-IP=`/sbin/ifconfig eno1 | grep -w inet | awk  '{print $2}'`
-PS1='\[\e[35;1m\]\u@$IP:\w $?\n>\[\e[0m\]'
-
-###fast model license
-#export ARMLMD_LICENSE_FILE=8224@192.168.2.50
-#. ~/ARM/FastModelsTools_10.2/source_all.sh
-export PATH=$PATH:~/win/DS-5_CE_v5.28.1/bin
-
-export GIT_SSL_NO_VERIFY=1
-
-##proxy
-export no_proxy="localhost,127.0.0.1,.some.domain,127.0.0.0/8,10.0.0.0/8,10.*,*.huawei.com,rnd-gitlab-eu.huawei.com"
-#gsettings set org.gnome.system.proxy ignore-hosts "['127.0.0.1', 'localhost', '*.huawei.com' ]"
-
-##jave envrionment
-export JAVA_HOME=/home/chenyi/win/jdk1.8.0_171
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
